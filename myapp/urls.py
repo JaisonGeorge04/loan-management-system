@@ -1,0 +1,36 @@
+from django.urls import path
+from myapp import views
+
+urlpatterns=[
+    path('',views.index),
+    path('signin/',views.signIn),
+    path('signup/',views.signUp),
+    path('user/',views.user),
+    path('adminp/',views.admin),
+    path('manager/',views.manager),
+    path('add_manager/',views.add_manager),
+    path('manage_branches/',views.manage_branches),
+    path('branch_delete/<id>/',views.delete_branch),
+    path('manage_managers/',views.manage_managers),
+    path('edit_manager/<id>/',views.edit_manager),
+    path('delete_manager/<id>/',views.delete_manager),
+    path('manage_loans/',views.manage_loans),
+    path('delete_loan/<id>/',views.delete_loan),
+    path('application/',views.application),
+    path('emi_form/',views.emi_calculator),
+    path('view_loan_applications/',views.view_loan_requests),
+    path('approve_loan/<id>/',views.approve_loan),
+    path('reject_loan/<id>/',views.reject_loan),
+    path('loan_applications/',views.view_loan_applications),
+    path('view_loans/',views.view_loans),
+    path('my_application/',views.my_application),
+    path('payments_by_date/<id>/', views.payments_by_date, name='payments_by_date'),
+    path('enable-payment/<str:loan_id>/', views.enable_payment, name='enable_payment'),
+    path('mark-as-paid/<str:application_date>/', views.mark_as_paid, name='mark_as_paid'),
+    path('loan-payments/', views.loan_payments, name='loan_payments'),
+    path('loan-payment-details/<int:pk>/', views.loan_payment_details, name='loan_payment_details'),
+    path('process-payment/', views.process_payment, name='process_payment'),
+    path('payment/<int:id>/', views.payment_form, name='payment_form'),
+    path('payment/success/', views.payment_success, name='payment_success'),
+
+]

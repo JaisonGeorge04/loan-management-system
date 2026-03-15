@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Applications</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            min-height: 100vh;
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background-color: #1e1e1e;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            color: #ffffff;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar ul li {
+            margin: 15px 0;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #d1d1d1;
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+            padding: 8px;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .sidebar ul li a i {
+            margin-right: 10px;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #333333;
+            color: #ffffff;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            background-color: #181818;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background-color: #272727;
+            padding: 15px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 1.8rem;
+            color: #f9f9f9;
+        }
+
+        /* Table Section */
+        .table-container {
+            background-color: #272727;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .table-container h2 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            color: #f9f9f9;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table th, table td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #444444;
+        }
+
+        table th {
+            background-color: #333333;
+            color: #ffffff;
+        }
+
+        table tr:hover {
+            background-color: #383838;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: auto;
+            padding: 10px;
+            background-color: #272727;
+            border-radius: 8px;
+            color: #d1d1d1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>Manager Panel</h2>
+        <ul>
+            <li><a href="/manager/"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+            <li><a href="/view_loan_applications/"><i class="fas fa-users"></i> Loan Requests</a></li>
+            <li><a href="/loan_applications/"><i class="fas fa-file-alt"></i> Loan Applications</a></li>
+            <li><a href="/"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <section class="main-content">
+        <!-- Header -->
+        <div class="header">
+            <h1>Loan Applications</h1>
+        </div>
+
+        <!-- Table Section -->
+        <div class="table-container">
+            <h2>Recent Applications</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Applicant Name</th>
+                        <th>Loan type</th>
+                        <th>Amount</th>
+                        <th>Interest rate</th>
+                        <th>Loan tenure</th>
+                        <th>Documents</th>
+                        <th>Remarks</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {%  for i in loan %}
+                    <tr>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{i.user}}</td>
+                        <td>{{i.loan_type}}</td>
+                        <td>{{i.loan_amount}}</td>
+                        <td>{{i.interest_rate}}</td>
+                        <td>{{i.loan_tenure}}</td>
+                        <td><a href="{{i.documents.url}}">Document</td>
+                        <td>{{i.remarks}}</td>
+                        <td>{{i.status}}</td>
+                        <td>
+                            <a href='/approve_loan/{{i.id}}/' style="background-color: #0078d7; color: #fff; padding: 5px 10px; border: none; border-radius: 4px;">Approve</a>
+                        </td>
+                        <td>
+                            <a href="/reject_loan/{{i.id}}/" style="background-color:rgb(248, 4, 4); color: #fff; padding: 5px 10px; border: none; border-radius: 4px;">Reject</a>
+
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>&copy; 2024 Bank Manager Dashboard | All Rights Reserved</p>
+        </div>
+    </section>
+</body>
+</html>
