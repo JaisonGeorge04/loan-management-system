@@ -2,7 +2,6 @@
 A web-based Loan Management System built using Django that helps manage loan applications, customer records, approvals, and repayments efficiently.
 
 📌 Features
-
 👤 Customer registration and management
 
 💳 Loan application processing
@@ -16,3 +15,14 @@ A web-based Loan Management System built using Django that helps manage loan app
 🛠️ Admin panel for full control
 
 📁 Media/file handling support
+--------------------------------------------
+
+🏗️ Tech Stack
+
+Backend: Django (Python)
+
+Frontend: HTML, CSS (Django Templates)
+
+Database: SQLite (default)
+
+Other Tools: Django Admin Panel
