@@ -15,7 +15,7 @@ A web-based Loan Management System built using Django that helps manage loan app
 🛠️ Admin panel for full control
 
 📁 Media/file handling support
---------------------------------------------
+-------------------------------------------
 
 🏗️ Tech Stack
 
