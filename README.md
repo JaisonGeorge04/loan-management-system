@@ -36,7 +36,5 @@ The main objective of this project is to reduce manual work in loan processing a
 ## Outcome
 
 This project enhanced practical knowledge in web development, database management, problem-solving, and real-world business application development.
-
 ---
-
 This project was developed as part of academic and practical learning to gain hands-on experience in full-stack web application development.
