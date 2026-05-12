@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make Payment</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Make Payment</h2>
+        
+        <div class="card shadow">
+            <div class="card-body">
+                <h5>Loan Application for {{ loan.applicant_name }}</h5>
+                <p><strong>Loan Amount:</strong> ${{ loan.loan_amount }}</p>
+                <p><strong>EMI:</strong> ${{ loan.calculate_payment }}</p>
+
+                <form method="POST">
+                    <!-- CSRF Token -->
+                    {% csrf_token %}
+                    
+                    <div class="mb-3">
+                        <label for="emi" class="form-label">EMI Amount</label>
+                        <input type="number" id="emi" name="emi" class="form-control" value="{{ loan.calculate_payment }}" readonly>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success w-50">Confirm Payment</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
