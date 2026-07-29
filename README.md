@@ -1,7 +1,7 @@
 # Loan Management System
 
 ## Overview
-
+ 
 The Loan Management System is a web-based application developed to simplify and automate the process of managing loan applications, customer records, and loan tracking. The system helps administrators efficiently manage customer information, monitor loan approvals, and maintain organized financial records.
 
 ## Features
