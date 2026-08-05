@@ -7,7 +7,7 @@ The Loan Management System is a web-based application developed to simplify and 
 ## Features
  
 * Customer registration and management
-* Loan application processing
+* Loan application processing 
 * Loan approval and status tracking
 * Secure admin login and authentication
 * Database management for customer and loan records
