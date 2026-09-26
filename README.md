@@ -31,7 +31,7 @@ The main objective of this project is to reduce manual work in loan processing a
 * Developed and managed the backend functionalities using Django
 * Created and managed customer and loan record modules
 * Worked on database integration and data handling
-* Improved system usability and workflow management
+* Improved system usability and workflow management 
 
 ## Outcome
 
