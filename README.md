@@ -32,7 +32,7 @@ The main objective of this project is to reduce manual work in loan processing a
 * Created and managed customer and loan record modules
 * Worked on database integration and data handling
 * Improved system usability and workflow management 
-
+ 
 ## Outcome
 
 This project strengthened my practical knowledge of web development, database management, problem-solving, and real-world business application development.
